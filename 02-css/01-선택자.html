@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택자 : css</title>
+</head>
+<body>
+    <h1>css</h1>
+    <h2>선택자</h2>
+
+
+    <h1>로고</h1>
+    <p>css를 선택하는 방법</p>
+
+    <style>
+        h1 {
+            color: brown;
+            font-size: 20px;
+        }
+        p {
+            color: white;
+            background: blue;
+            font-size: 16px;
+        }
+    </style>
+
+    <style>
+        ul {background: lightgray;}
+        li {background: tomato;}
+        a {background: skyblue;}
+
+        /* 자식선택 > 넣기 : 자식은 > */
+        /* id는 #, class는 .넣기 */
+        #list > li {border: 1px solid #000;}
+        /* depth2의 자손 중 a 태그 선택 : 자손은 a 태그 */
+        .depth2 a {color: red;}
+
+        /* 중복선택 */
+        #list > li, .depth2 > li {padding: 5px;}
+    </style>
+    <h2>자식 선택</h2>
+    <ul id="list">
+        <li><a href="#">menu1</a>
+        <ul class="depth2">
+            <li><a href="#">menu1-1</a></li>
+            <li><a href="#">menu1-1</a></li>
+            <li><a href="#">menu1-1</a></li>
+        </ul>
+    </li>
+            <li><a href="#">menu2</a>
+            <ul>
+                <li><a href="#">menu2-1</a></li>
+                <li><a href="#">menu2-2</a></li>
+                <li><a href="#">menu2-3</a></li>
+            </ul>
+        </li>
+        <li><a href="#">menu3</a>
+        <ul>
+            <li><a href="#">menu3-1</a></li>
+            <li><a href="#">menu3-2</a></li>
+            <li><a href="#">menu3-3</a></li>
+        </ul>
+        </li>
+    </ul>
+
+    <ul>
+        <li><a href="#">1</a>
+            <ul>
+                <li><a href="#">1-1</a></li>
+                <li><a href="#">1-2</a></li>
+                <li><a href="#">1-3</a></li>
+            </ul>
+        </li>
+        <li><a href="#">2</a>
+            <ul>
+                <li><a href="#">2-1</a></li>
+                <li><a href="#">2-2</a></li>
+                <li><a href="#">2-3</a></li>
+            </ul>
+        </li>
+        <li><a href="#">3</a>
+            <ul>
+                <li><a href="#">3-1</a></li>
+                <li><a href="#">3-2</a></li>
+                <li><a href="#">3-3</a></li>
+            </ul>
+        </li>
+    </ul>
+</body>
+</html>

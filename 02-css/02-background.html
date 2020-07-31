@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background : css</title>
+</head>
+<body>
+    
+    <h1>Background</h1>
+    <h2>background-color</h2>
+
+    <p class="bg-c">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit doloremque deleniti soluta facilis, aperiam voluptate, nemo fugit adipisci repudiandae ducimus rerum autem obcaecati repellendus at quis numquam sequi eaque dicta.</p>
+
+    <style>
+        .bg-c {
+            background-color: rgba(40,180,90,0.2);
+        }
+    </style>
+
+    <h2>background-image</h2>
+    <h1 class="logo">w3schools.com</h1>
+    <style>
+        .logo {
+            width: 100%; height: 45px;
+            background-image: url(./images/logo.jpg);
+            /* 글씨와 이미지 안 겹치게하는것. ti 탭. 텍스트 밀어버리기*/
+            text-indent: -9999px;
+            /* 이미지 반복되는거 뺴는것 */
+            background-repeat: no-repeat;
+        }
+    </style>
+
+    <h2>backgroud-pisition</h2>
+    <div class="box">
+        
+    </div>
+    <style>
+        .box {
+            width: 1400px; height: 800px;
+            background-image: url(./images/이미지.jpg);
+            background-repeat: no-repeat;
+            background-color: #dddddd;
+            background-position: 100px 0 ;
+        }
+    </style>
+    
+    <br><br>
+
+    <a href="#" class="logo-naver">naver</a>
+    <a href="#" class="img-g link-dark">다크모드로 보기</a>
+    <a href="#" class="img-g link-pre">이전페이지</a>
+    <a href="#" class="img-g link-next">다음페이지</a>
+    <style>
+
+        .img-g {
+            display: block;
+            background-image: url(./images/img-g.png);
+            background-repeat: no-repeat;
+            text-indent: -9999px;
+        }
+        .logo-naver {
+            display: block;
+            width: 443px; height: 105px;
+            background-image: url(./images/img-g.png);
+            background-repeat: no-repeat;
+            text-indent: -9999px;
+        }
+        /* 마우스 오버시 */
+        .link-pre :hover {
+            width: 76px; height: 76px;
+            background-position: -240px -120px;
+        }
+
+        .link-pre {
+            width: 76px; height: 76px;
+            background-position: 0 -120px;
+           }
+        .link-next {
+                width: 76px; height: 76px;
+                background-position: -80px -120px;
+           }
+        .link-dark {
+            width: 260px; height: 90px;
+            background-image: url(./images/sp_main.png);
+            background-position: -558px -120px;
+        }
+    </style>
+
+    <h2>background-size</h2>
+    <a href="#" class="ban">
+        네이버 해피빈 
+        <strong> 해피빈 펀딩 참여하면 기부콩 3천원</strong>
+        이번주 오픈 펀딩은?
+        </a>
+    <style>
+        /* 원래 배너, 운영성 이미지는 이미지태그(html)로 넣어야함.(img 태그) 디자인은 css로 */
+        .ban {
+            display: block;
+            width: 180px; height: 100px;
+            background-image: url(./images/ban.jpg);
+            background-repeat: no-repeat;
+            text-indent: -9999px;
+            background-size: cover;
+            /* 꽉 차고 잘리면안돼 contain(비율유지), 꽉 차서 잘려 cover */
+            background-color: yellow;
+        
+        }
+    </style>
+
+
+<br><br><br><br>
+</body>
+</html>
