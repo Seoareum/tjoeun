@@ -48,11 +48,12 @@
     <br><br>
 
     <a href="#" class="logo-naver">naver</a>
-    <a href="#" class="img-g link-dark">다크모드로 보기</a>
     <a href="#" class="img-g link-pre">이전페이지</a>
     <a href="#" class="img-g link-next">다음페이지</a>
-    <style>
+    <a href="#" class="img-g link-dark">다크모드로 보기</a>
 
+    <style>
+/* 공통 클래스 추가 */
         .img-g {
             display: block;
             background-image: url(./images/img-g.png);
@@ -67,45 +68,104 @@
             text-indent: -9999px;
         }
         /* 마우스 오버시 */
-        .link-pre :hover {
-            width: 76px; height: 76px;
+        .link-pre:hover {
+            background-position: -160px -120px;
+        }
+        .link-next:hover {
             background-position: -240px -120px;
         }
-
         .link-pre {
+            display: inline-block;
             width: 76px; height: 76px;
             background-position: 0 -120px;
-           }
+        }
         .link-next {
+            display: inline-block;
                 width: 76px; height: 76px;
                 background-position: -80px -120px;
-           }
+        }
         .link-dark {
+            display: block;
             width: 260px; height: 90px;
             background-image: url(./images/sp_main.png);
             background-position: -558px -120px;
         }
     </style>
+<!--  꽉 차고 잘리면안돼 contain(비율유지), 꽉 차서 잘려 cover  -->
+
+
+    <h2>background-attachment</h2>
+    <div class="bg-atta">
+
+    </div>
+    <style>
+    .bg-atta {
+        width: 100%; height: 100px;
+        background-image: url(./images/map.jpg);
+        background-size: cover;
+    }
+    </style>
 
     <h2>background-size</h2>
+    <h3>1. defult(원래 사이즈 그대로 보여짐)</h3>
     <a href="#" class="ban">
         네이버 해피빈 
         <strong> 해피빈 펀딩 참여하면 기부콩 3천원</strong>
         이번주 오픈 펀딩은?
         </a>
+
+        <h3>2. contain (모든 배경이 보임)</h3>
+        <!-- ban 스타일 먹고 ban-contain 스타일도 먹음. 결국 둘 다 적용됨 -->
+        <a href="#" class="ban ban-contain">
+        네이버 해피빈 
+        <strong> 해피빈 펀딩 참여하면 기부콩 3천원</strong>
+        이번주 오픈 펀딩은?
+        </a>
+
+        <h3>3. cover (배경이미지가 꽉 참)</h3>
+        <a href="#" class="ban ban-cover">
+        네이버 해피빈 
+        <strong> 해피빈 펀딩 참여하면 기부콩 3천원</strong>
+        이번주 오픈 펀딩은?
+        </a>
+
+        <h3>4. 절대값(px)</h3>
+        <a href="#" class="ban ban-px">
+        네이버 해피빈 
+        <strong> 해피빈 펀딩 참여하면 기부콩 3천원</strong>
+        이번주 오픈 펀딩은?
+        </a>
+
+        <h3>5. 상대값(%)</h3>
+        <a href="#" class="ban ban-per">
+        네이버 해피빈 
+        <strong> 해피빈 펀딩 참여하면 기부콩 3천원</strong>
+        이번주 오픈 펀딩은?
+        </a>
+
+
     <style>
-        /* 원래 배너, 운영성 이미지는 이미지태그(html)로 넣어야함.(img 태그) 디자인은 css로 */
+        .ban-per {
+            background-size: auto 50%;
+        }
+        .ban-px {
+            background-size: 200px 50px;
+        }
+        .ban-cover {
+            background-size: cover;
+        }
+       .ban-contain {
+            background-size: contain;
+        }      
         .ban {
             display: block;
-            width: 180px; height: 100px;
+            width: 100%; height: 100px;
             background-image: url(./images/ban.jpg);
             background-repeat: no-repeat;
             text-indent: -9999px;
-            background-size: cover;
-            /* 꽉 차고 잘리면안돼 contain(비율유지), 꽉 차서 잘려 cover */
             background-color: green;
-        
         }
+        /* 원래 배너, 운영성 이미지는 이미지태그(html)로 넣어야함.(img 태그) 디자인은 css로 */
     </style>
 
 
