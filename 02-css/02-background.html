@@ -103,6 +103,7 @@
         width: 100%; height: 100px;
         background-image: url(./images/map.jpg);
         background-size: cover;
+        background-attachment: fixed;
     }
     </style>
 
@@ -168,6 +169,16 @@
         /* 원래 배너, 운영성 이미지는 이미지태그(html)로 넣어야함.(img 태그) 디자인은 css로 */
     </style>
 
+    <h2>background Shorthand</h2>
+    <div class="bg-short">
+
+    </div>
+    <style>
+        .bg-short {
+            /* (컬러,) url, non, 위치 꼭 셋트 */
+            background: #000 url(./images/map.jpg) no-repeat -100px -200px;
+        }
+    </style>
 
 <br><br><br><br>
 </body>

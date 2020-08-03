@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko"> 
+<head>
+<meta charset="utf-8">
+<title>BoxModel</title> 
+</head> 
+<body>
+<h1>BoxModel</h1>
+
+<h2>width</h2>
+    <div class="width">
+        width : 50%
+            <div class="w1">block (width:100%)</div>
+            <span class="w2">inline</span>
+            <span class="w3">inline-block</span>
+    </div>
+    <style>
+        /* width:엄마 w1~3:자식 / 엄마크기가 기준. 엄마보다 자식이 클 순 없음. 엄마 키우고 자식 키워야함 */
+        .width {
+            width: 50%;
+            border: 1px solid #000;
+        }
+        .width .w1 {
+            border: 1px solid red;
+        }
+        .width .w2 {
+            border: 1px solid blue;
+        }
+        .width .w3 {
+            display: inline-block;
+            border: 1px solid rgb(219, 8, 166);
+        }
+
+    </style>
+
+    <br><br>
+    <hr>
+
+    <h2>max-width, min-width</h2>
+   <div class="box box1">
+       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium laborum, enim ratione cum cupiditate, impedit ipsa sapiente modi nisi commodi vero et soluta amet sint aliquam ab maxime doloremque sit?
+   </div>
+   <div class="box box2">
+       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium laborum, enim ratione cum cupiditate, impedit ipsa sapiente modi nisi commodi vero et soluta amet sint aliquam ab maxime doloremque sit?
+   </div>
+   <div class="box box3">
+       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium laborum, enim ratione cum cupiditate, impedit ipsa sapiente modi nisi commodi vero et soluta amet sint aliquam ab maxime doloremque sit?
+   </div>
+   <div class="box box4">
+       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium laborum, enim ratione cum cupiditate, impedit ipsa sapiente modi nisi commodi vero et soluta amet sint aliquam ab maxime doloremque sit?
+   </div>
+  
+   <style>
+       /* div는 가로 기본이 100%임. 굳이 안 넣어도됨, 인터넷 사이즈 줄이면 자동으로 같이 줄여짐 100%설정이니까 */
+       .box {
+           width: 100%;
+           background: pink;
+       }
+       .box2 {
+           max-width: 500px;
+           background: greenyellow;
+       }
+       .box3 {
+           min-width: 500px;
+           background: brown;
+       }
+       .box4 {
+           /* width-max width-min width, 세개를 셋트로 사용 */
+           width: 100%;
+           max-width: 600px;
+           min-width: 400px;
+           background: blue;
+       }
+</style>
+
+<br><br>
+<hr>
+<h2>padding</h2>
+
+    <a href="#" class="link-g link-naver">네이버 바로가기</a>
+    <a href="#" class="link-g link-can">취소</a>
+
+    <br><br><br>
+    <hr>
+    <h2>padding-boxsizing</h2>
+    <div class="padding">
+        드디어 섭씨 40도가 넘었다. 엄마 뱃속보다 뜨거운 날씨, 감사해야 할까? 해가 뜨거울 뿐인데 오존층이 파괴되어 오존주의보가 발령되었다.
+    </div>
+    
+    <div class="boxsizing">
+        드디어 섭씨 40도가 넘었다. 엄마 뱃속보다 뜨거운 날씨, 감사해야 할까? 해가 뜨거울 뿐인데 오존층이 파괴되어 오존주의보가 발령되었다.
+    </div>
+    
+    <style>
+        .padding {
+         /* w:400px h:100px 박스 만들어짐. 마진 등 계산해서 적어야함 */
+            width: 338px; height: 58px;
+            border: 1px solid red;
+            padding: 20px 30px;
+        }
+        .boxsizing {
+            /* 최종 실제사이즈만 적으면 됨 */
+            width: 400px; height: 100px;
+            border: 1px solid purple;
+            padding: 20px 30px;
+            box-sizing: border-box;
+        }
+        /* 두가지 다 쓰고 인터넷에서 보면 결국 같은 사이즈임. */
+        /* 처음부터  " *{box-sizing: border-box;} " 써야함 */
+    </style>
+
+    <style>
+        .link-g {
+            /* padding 수치 다 다르면 쓰지만, 겹치면 안써도 돼. 이경우엔 겹쳐서 안씀. 만약 중간에 겹치면 다 써야함. ex)10px 20px 10px 40px  */
+            color: #fff;
+            padding: 10px 20px;
+        }
+        .link-naver {
+            background: green;
+            border: 1px solid orangered;
+            
+        }
+        .link-can {
+            background: gray;
+            border: 1px solid #000;
+        }
+    </style>
+
+    <hr>
+    <h2>margin</h2>
+    <p class="margin margin1">유래없이 뜨거운 날씨이다. 섭씨 38도를 웃도는 온도에서 에어콘은 이제 살기 위한 도구가 되었다.</p>
+    <p class="margin margin2">달걀을 사다 놓기만 해도 병아리로 부화된다는 농담같은 이야기가 현재 대한민국의 실화다.</p>
+    <p class="margin margin3">드디어 섭씨 40도가 넘었다. 엄마 뱃속보다 뜨거운 날씨, 감사해야 할까? 해가 뜨거울 뿐인데 오존층이 파괴되어 오존주의보가 발령되었다.</p>
+    <p class="margin margin4">드디어 섭씨 40도가 넘었다. 엄마 뱃속보다 뜨거운 날씨, 감사해야 할까? 해가 뜨거울 뿐인데 오존층이 파괴되어 오존주의보가 발령되었다.</p>
+
+    <style>
+        /* 기본으로 마진이 1 설정됨. 0으로 해줘야함 */
+        * {
+            margin: 0; padding: 0;
+        }
+        /* 마진은 서로 겹쳐서 먹힘, padding은 안 겹침 */
+        .margin {
+            width: 60%;
+            background: yellow;
+            padding: 10px;
+        }
+        .margin.margin1 {
+            margin: 10px;
+        }
+        .margin.margin2 {
+            margin: 50px 10px 30px 40px;
+        }
+        .margin.margin3 {
+            margin: 0 auto 200px;
+            /* 마지막 auto 생략 */
+        }
+        .margin.margin4 {
+            margin-bottom: 100px;
+        }
+    </style>
+
+</body> 
+</html>
