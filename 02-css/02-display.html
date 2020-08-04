@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko"> 
+<head>
+<meta charset="utf-8">
+<title>블록과 인라인</title> 
+<style type="text/css">
+    * {
+        list-style: none;
+    }
+    
+    .gnb li {
+        display: inline-block;
+    }
+    .gnb a {
+        /* block은 100%라 글씨크기를 넘어 끝까지 컬러채워짐(위에서 아래로 쌓임). inline은 겹쳐짐(가로로 쌓임). inline-block은 글씨만큼만 */
+        display: inline-block;
+        padding: 10px 15px;
+        background: tomato;
+        color: #fff;
+    }
+</style>
+</head> 
+<body>
+	<ul class="gnb">
+		<li><a href="#">Company</a></li>
+		<li><a href="#">Product</a></li>
+		<li><a href="#">Service</a></li>
+		<li><a href="#">Community</a></li>
+    </ul>
+    
+    <div class="pop">
+        나는 팝업이다.
+    </div>
+    <style>
+        .pop {
+            display: none;
+            width: 100px;height: 100px;
+            background: #fff;
+            border: 1px solid tomato;
+            border-radius: 6px;
+            box-shadow: 10px 10px 5px lightgray;
+            /* 그림자: 가로 세로 위치 - 그림자퍼지는 크기 - 그림자색상 */
+        }
+    </style>
+</body> 
+</html>

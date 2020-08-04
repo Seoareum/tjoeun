@@ -113,5 +113,45 @@
         }
     </style>
 
+    <h2>가상선택자 - 순서</h2>
+    <ul class="lst">
+        <li>멍멍왈왈</li>
+        <li>냥</li>
+        <li>짹짹</li>
+        <li>음메에</li>
+    </ul>
+    <style>
+        .lst li {
+            display: inline-block;
+        }
+        .lst {
+            /* 리스트 앞 땡땡이 없애는법 */
+            list-style: none;
+        }
+        .lst li::after {
+            content: '|';
+            color: black;
+            margin: 0 6px 0 10px;
+        }
+        /* lst의 li 중 마지막 li child 의 after 막대기(|) 없애기 */
+        .lst li:last-child::after {
+            display: none;
+        }
+
+        .lst li:first-child {
+            color: red;
+        }
+        .lst li:nth-child(2) {
+            color: cornflowerblue;
+        }
+        .lst li:nth-child(3) {
+            color: orange;
+        }
+        .lst li:last-child {
+            color: blue;
+        }
+    </style>
+
+
 </body>
 </html>
