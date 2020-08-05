@@ -5,7 +5,8 @@
 <title>font</title> 
 <style>
     * {
-        font-size: 20px;
+/* 기준폰트 정함 */
+        font-size: 16px;
     }
 </style>
 </head> 
@@ -19,7 +20,7 @@
     </style>
 
     <!-- 말줄임  -->
-    <ul class="lst_bbs_type1">
+    <ul class="lst_bbs">
         <li>
             <a href="#">
                 이천교통약자이동지원센터 촉탁직 채용 최종합격자 명단 공고 이천교통약자이동지원센터 촉탁직 채용 최종합격자 명단 공고
@@ -46,13 +47,27 @@
             </a>
         </li>
     </ul>
+    <style>
+        .lst_bbs a {
+            /* 무조건 블럭 아님 인라인블럭으로 만들어서 자기 위치 잡을 수 있게 만들어야함 */
+            display: block;
+            width: 60%;   /* 없어도 되지만 기본이 100% */
+            white-space: nowrap;    /* 무조건 한줄로 */
+            overflow: hidden;  /* 넘치는 글자 안보이게 */
+            text-overflow: ellipsis;   /* (넘치는 글자) 말줄임표(...) 표시 */
+        }
+    </style>
 
 
     <!--  폰트 단위 -->
     <hr>
+    <!-- h2 20px -->
     <h2>폰트 단위</h2>
+    <!-- h3 18 -->
     <h3>하나이빈후과</h3>
+    <!-- p 14 -->
     <p class="bold">오늘의 진료는 본관에서 실시합니다.</p>
+    <!-- li 14px   /  span 12px  중요: 기준값음 li 태그의 폰트 사이즈 14px / li는 기본폰트 16px 기준, span은 li의 14px을 기준으로 해야함. 엄마가 li여서 -->
     <ul>
         <li>내과<span>(감기)</span></li>
         <li>이비인후과<span>(인후염)</span></li>
@@ -60,24 +75,52 @@
         <li>피부과</li>
     </ul>
     <style>
-        /* em은 배. 2em=2배 */
+        /* em은 기준폰트의 배 단위. 2em=2배 (ex 16px이 기준이면 2em은 32px임*/
+        h2 {
+            font-size: 1.25em;
+        }
         h3 {
-            font-size: 2em;
+            font-size: 1.125em;
         }
         p.bold {
-            font-size: 1.3em;
+            font-size: 0.875em;
         }
         ul li {
-            font-size: 1.2em;
+            font-size: 0.875em;
+        }
+        ul li span {
+            font-size: 0.750em;
         }
         /* em 단위는 부모 태그를 기준으로 상대값. 작게 적어도 상대크기라 엄마인 li랑 크기가 똑같아짐.  */
         ul li span {
-            font-size: 1em;
+            font-size: 0.857em;
         }
     </style>
 
+
+
+<!-- li :14 /sapn 12 -->
+<ul>
+    <li>내과<span>(감기)</span></li>
+    <li>이비인후과<span>(인후염)</span></li>
+    <li>정형외과</li>
+    <li>피부과</li>
+</ul>
+<style>
+    .lst-rem li {
+        font-size: 0.875rem;
+    }
+    .lst-rem li span {
+        /* rem은 베이스 폰트를 기준으로 함.  (부모 폰트 기준이 달라져도. 그래서 16기준으로 12px 잡으면됨. em은 li 14기준) */
+        font-size: 0.750rem;
+    }
+</style>
+
+
     <!--  기타 폰트설정  -->
-    <p class="font1">
+    <!-- 텍스트 크기는 vw"뷰포트 너비"를 의미하는 단위로 설정. 텍스트 크기가 브라우저 창의 크기를 따름. (창 늘리면 비율 그대로 글씨도 커짐 ex모바일글씨확대)-->
+    <h2 style="font-size: 10vw;">폰트사이즈 vw</h2>
+    <p class="font1" style="font-size: 5vw;">
         일회용 mask의 기본적인 기능으로는 <br>
         김서림 방지 기능, <br>
         편안한 ear band 등이 있다.
