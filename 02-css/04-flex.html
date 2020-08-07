@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <title>flexbox</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-size: 16px;
+            line-height: 1.5;
+            text-decoration: none;
+            list-style: none;
+            box-sizing: border-box;
+        }
+        .flexbox_g {
+            /* display:flex 무조건 가로정렬. 엄마에게만. 자식은 float left 사용 */
+            display: flex;
+            margin-bottom: 5px;
+            padding: 5px;
+            background: lightgray;
+        }
+        .flexbox_g > div {
+            width: 24px; height: 24px;
+            margin: 0 1px;
+            background: pink;
+            color: black;
+            text-align: center;   /* 글씨 정렬 */
+            line-height: 24px;  /* 높이랑 라인높이 똑같이 맞추면 세로 가운데정렬 */
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="flexbox_g flexbox1">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+    <style>
+        .flexbox1 {
+            display: flex;
+        }
+
+    </style>
+
+    <div class="flexbox_g flexbox2">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>10</div>
+        <div>11</div>
+        <div>12</div>
+    </div>
+    <style>
+        .flexbox2 {
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+
+    <div class="flexbox_g flexbox3">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>10</div>
+        <div>11</div>
+        <div>12</div>
+    </div>
+    <style>
+        .flexbox3 {
+            display: flex;
+            flex-wrap: wrap;  /* 정사각형으로 만들어줌 */
+        }
+    </style>
+
+    <div class="flexbox_g flexbox4">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+    <style>
+        .flexbox4 {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+
+    <div class="flexbox_g flexbox5">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+    <style>
+        .flexbox5 {
+            display: flex;
+            justify-content: flex-end;
+        }
+    </style>
+
+    <div class="flexbox_g flexbox6">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+    <style>
+        .flexbox6 {
+            display: flex;
+            justify-content: space-around;  /* 떨어진 간격이 동일하게 배치 */
+        }
+    </style>
+    
+    <div class="flexbox_g flexbox7">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+    <style>
+        .flexbox7 {
+            display: flex;
+            justify-content: space-between;  /* 양끝맞춤. nav때 쓰면돼 */
+        }
+    </style>
+    
+    <div class="flexbox_g flexbox8">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+    <style>
+        .flexbox8 {
+            display: flex;
+            align-items: center;
+            height: 50px;
+        }
+    </style>
+
+    <div class="flexbox_g flexbox9">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+    <style>
+        .flexbox9 {
+            display: flex;
+            align-items: stretch;
+            height: 50px;
+        }
+        /* 높이 해제 */
+        .flexbox9 >div {
+            height: auto;
+        }
+    </style>
+
+
+    <div class="flexbox_g flexbox10">
+        <div>1</div>
+    </div>
+    <style>
+        .flexbox10 {
+            display: flex;
+            justify-content: center;   /* 가로정렬 */
+            align-items: center;   /* 세로정렬 */
+            height: 50px;
+        }
+    </style>
+
+</body>

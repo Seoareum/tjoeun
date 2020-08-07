@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>float</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-size: 16px;
+            line-height: 1.5;
+            color: #333;
+            text-decoration: none;
+            list-style: none;
+            box-sizing: border-box;
+            }
+            /* clear-g float 해제 할 수 있는 공통 가상클래스 임의로 만들기 */
+            .clear-g::after {
+                display: block;
+                clear: both;
+                content: "";
+            }
+        
+        .wrap {
+            width: 1200px;margin: 30px auto;
+            border: 5px solid aqua;
+            background: white
+            }
+            header {
+                /* height: 100px; */
+            }
+            /* float 해제 방법2. clear:both 사용  */
+          /*   header::after {
+                display: block;
+                clear: both;
+                content: ""; */
+                /* 가상만들면 content는 꼭 필요 */
+            }
+            header h1 {
+                float: left;
+            }
+            header nav {
+                float: right;
+                margin-right: 10px;
+            }
+            header nav li {
+                float: left;
+                padding: 10px 15px;
+            }
+            .slide {
+                height: 300px;
+                background:pink;
+            }
+            .container {
+                /* 브라우저에서 보면 자식을 인식못함. 그래서 속성 사이즈 보면 세로는 0. footer에서도 인식못하고 컨테이너 사이즈 다 잡아먹음
+                그래서 오버플로우 하면 자리 잡힘 */
+                /* float 해제 방법1. 부모에게 overflow : hidden  */
+                overflow: hidden;
+               /*  height: 200px; */
+            }
+            /* .container .sec:last-child {
+                float: none; */
+                /*  또는 clear:both; */
+            }
+            .sec {
+                float: left;
+                width: 33.333%;
+            }
+            footer {
+                height: 100px;
+                background: lightgray;
+            }
+            /*  footer h1, footer > div {float: left;}  : 공통부분 */
+            footer h1 {
+                float: left;
+                width: 30%;
+            }
+            footer .copyright {
+                float: left;
+                width: 40%;
+            }
+            footer .sns {
+                float: left;
+                width: 30%;
+            }
+
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <header class="clear-g">
+            <h1>logo</h1>
+            <nav>
+                <ul>
+                    <li>menu1</li>
+                    <li>menu2</li>
+                    <li>menu3</li>
+                    <li>menu4</li>
+                </ul>
+            </nav>
+        </header>
+        <div class="slide">slide</div>
+        <div class="container">
+ <!--       또는     <div class="sec"></div> -->
+            <section class="sec">
+                <h2>공지사항/갤러리</h2>
+                <div class="cont">내용</div>
+            </section>
+            <section class="sec">
+                <h2>배너</h2>
+                <div class="cont">내용</div>
+            </section>
+            <section class="sec">
+                <h2>바로가기</h2>
+                <div class="cont">내용</div>
+            </section>
+        </div>
+        <footer class="clear-g">
+            <h1>logo</h1>
+            <div class="copyright">copyright</div>
+            <div class="sns">sns</div>
+        </footer>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko"> 
+<head>
+<meta charset="utf-8">
+<title>TRANSFORM</title> 
+<style>
+    p {
+        width: 100px;height: 100px;
+        background: tomato;
+        text-align: center; line-height: 100px;  /* 글씨중앙정렬 */
+        color: white;
+        font-size: 13px;
+    }
+</style>
+</head> 
+<body>
+  <p>Original</p>
+  <!-- translate는 이동 -->
+  <p class="t1">translate(30px,20px)</p>
+  <style>
+    .t1 {
+        transform: translate(30px, 20px);
+        transition: transform 1s, background 0.5s;
+    }
+    .t1:hover {
+        background: pink;
+        transform: translate(0,0);
+    }
+</style>
+
+<!-- rotate 회전 / deg=각도 -->
+  <p class="t2">rotate(60deg)</p>
+  <style>
+      .t2 {
+          transform: rotate(60deg);
+          transition: all 1s;
+          transition-timing-function: ease-in;
+      }
+      .t2:hover {
+          background: yellow; color: teal;
+          transform: rotate(0);
+      }
+  </style>
+
+  <p class="t3">scale(0.7, 1.3)</p>
+  <!-- scale 크기 -->
+  <style>
+      .t3 {
+          transform: scale(0.7, 1.3);
+          transition: transform 1s;
+          transition-delay: 1s;
+      }
+      .t3:hover {
+          transform: scale(1, 1);
+      }
+  </style>
+
+  <p class="t4">skew(15deg, 10deg)</p>
+  <style>
+      .t4 {
+          transform: skew(15deg, 10deg);
+          transition: transform 1s linear 1s;
+      }
+      .t4:hover {
+          transform: skew(0, 0);
+      }
+  </style>
+
+  <p class="t5">matrix(1, -0.1, 0, 1, 0, 0)</p>
+  <style>
+      .t5 {
+          transform: matrix(1, -0.1, 0, 1, 0, 0);
+      }
+  </style>
+
+
+</body> 
+</html>

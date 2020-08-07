@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko"> 
+<head>
+<meta charset="utf-8">
+<title>TRANSITION</title> 
+<style type="text/css">
+    * {
+        margin: 0; 
+        padding: 0; 
+        font-size: 14px; 
+        color: #333;
+        line-height: 1.5;
+        text-decoration: none;
+        list-style: none;
+        box-sizing: border-box;
+    }
+</style>
+</head> 
+
+<body>
+      <h1>transition</h1>
+      <!-- 방법1 -->
+      <h2>float 이용한 메뉴</h2>
+      <div class="wrap-m">
+         <ul class="menu">
+           <li><a href="#">Company</a></li>
+            <li><a href="#">Product</a></li>
+            <li><a href="#">Service</a></li>
+           <li><a href="#">Customer </a></li>
+           <li><a href="#">Community</a></li>
+         </ul>
+      </div>
+      <style>
+          .wrap-m {
+              margin: 0 -1%;  /* 양쪽 끝 공간 맞추려면 */
+              margin-bottom: 20px;
+          }
+          .menu {
+              overflow: hidden;  /* 행간할때 마진바텀이랑 필요 */
+          }
+           .menu li {
+              float: left;
+              width: 20%;   /* (li 5개라 20%씩 넣었지만 공간 필요해서 19%.  마진대신 패딩하면서 20%됨) float는 마진 필요함. 안그럼 붙음 */
+              padding: 0 1px;
+          }
+          .menu a {
+              display: block;
+              width: 100%; height: 30px;   /* 사이즈 넣으려면 디스플레이 블럭 꼭 있어야함 , 높이나 배경색, 행간등 a 태그에 넣는게 편함 */
+              line-height: 30px; 
+              background: lightblue;
+              text-align: center; 
+          }
+      </style>
+
+<!-- 방법2 -->
+
+    <h2>그리드 맞추기</h2>
+    <header>
+        <ul class="menu2">
+            <li>
+                <a href="#">Company</a>
+                <ul class="nav-d2">
+                    <li><a href="#">menu1</a></li>
+                    <li><a href="#">menu2</a></li>
+                    <li><a href="#">menu3</a></li>
+                </ul>
+              </li>
+            <li>
+                <a href="#">Product</a>
+                <ul class="nav-d2">
+                    <li><a href="#">menu1</a></li>
+                    <li><a href="#">menu2</a></li>
+                    <li><a href="#">menu3</a></li>
+                </ul>
+              </li>
+            <li>
+                <a href="#">Service</a>
+                <ul class="nav-d2">
+                    <li><a href="#">menu1</a></li>
+                    <li><a href="#">menu2</a></li>
+                    <li><a href="#">menu3</a></li>
+                    <li><a href="#">menu4</a></li>
+                </ul>
+              </li>
+            <li>
+                <a href="#">Customer </a>
+                <ul class="nav-d2">
+                    <li><a href="#">menu1</a></li>
+                    <li><a href="#">menu2</a></li>
+                 </ul>
+             </li>   
+            <li>
+                <a href="#">Community</a>
+              </li>
+          </ul>
+    </header>
+        <div class="container">
+            본문
+    </div>
+<footer></footer>
+<style>
+    .container {height: 200px; background: lightgrey;}
+    .menu2 {
+        display: flex;             
+        justify-content: space-between;
+    }
+    .menu2 > li {
+        position: relative;  /* li를 기준으로  */ 
+        width: 19%;  height: 30px;  /* 자동이라 가로값 의미 없음. display flex는 마진 필요없음. 자동으로 떨어짐 */
+    }
+    .menu2 >li > a {
+        display: block;
+        background: lightblue;
+        text-align: center; line-height: 30px; 
+        /* 컬러값은 무조건 텍스트를 감싸고 있는 태그에 넣기 */
+        color: red;
+    }
+/*    .menu2 :hover .nave-d2 ( 마우스 오버했을떄 메뉴 전체 나오고 싶으면.) */
+/* 마우스 오버한 li의 자식만 보이게 */
+    .menu2 >li:hover > .nav-d2 {
+        /* display: block; */
+        max-height: 100px;
+    }
+    .nav-d2 {
+        /* li기준으로 depth2를 띄워준다 */
+          /*  display: none; */
+           position: absolute;top:30px; left: 0; right: 0;  /* 오른쪽 또는 width: 100px; */
+           background: #fff;
+           /* 높이값을 0으로 변경했을 때 넘치는 텍스트를 안보이게 =오버플로우히든 */
+           overflow: hidden;
+           max-height: 0;
+           transition: all 0.5s;
+       }
+       .nav-d2 a {
+           display: block;
+           text-align: center;
+           border-bottom: 1px solid lightcoral;
+       }
+</style>
+</body> 
+</html>
