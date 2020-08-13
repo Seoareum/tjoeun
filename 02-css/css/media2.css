@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+* {
+    margin: 0; padding: 0;
+    font-size: 16px; line-height: 1.5;
+    list-style: none; text-decoration: none;
+}
+/* 모바일버전 */
+.wrap {
+    display: flex;
+    height: 100vh; /* vh = 꽉 채우라는.  flex-grow:1 ; */
+    flex-direction: column; /* 세로 */
+}
+header {
+    /* 나머지 영역을 채움 */
+    flex-grow: 10;
+    background: lightskyblue;
+}
+.container {
+    height: 550px;
+}
+footer {
+    height: 10%;
+    background: lightskyblue;
+}
+
+/* pc버전 */
+/* 최소 480px  < width < 100% */
+@media screen and (min-width: 480px) {
+    
+    .wrap {
+        position: relative;
+        padding-left: 150px;  /* 컨테이너 옆으로 밀기 */
+    }
+    header {
+        position: absolute; top: 0;left: 0;
+        width: 150px; height: 100vh;
+    }
+  }

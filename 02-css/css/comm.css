@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;padding: 0;
+    font-size: 16px; line-height: 1.5;
+    list-style: none; text-decoration: none;
+}
+
+/* pc버전 - 4단 */
+.w3-row-padding {
+    display: flex;
+    justify-content: space-between;  /* 양쪽맞춤 */
+    width: 96%; margin: auto;
+}
+.w3-row-padding .w3-third {
+    width: 24%;
+    border: 3px solid lightseagreen;
+}
+.w3-row-padding h2 {
+    padding: 10px 0 0;
+    font-size: 1.250em;  /* 20px */
+    color: lightsalmon;
+    text-align: center;
+    border-bottom: lightyellow;
+}
+.w3-row-padding p {
+    padding: 15px;
+    font-size: 0.875em;    /* 14px */
+    color: lightslategray;
+    text-align: left;
+}
+
+/* tablet - 2단 */
+/* 360px < width < 768px 
+width 값이 360(모바일사이즈) < 768px (최대값 768px(최소 0)) */
+@media screen and (max-width: 768px) {
+    .w3-row-padding {
+        flex-wrap: wrap;
+    }
+    .w3-row-padding .w3-third {
+        width: 49%;
+        margin-bottom: 10px;
+    }
+}
+
+/* mobile - 1단 */
+/* 0 < width < 360px
+width 값이 0 < width < 360px */
+@media screen and (max-width: 360px) {
+    .w3-row-padding .w3-third {
+        width: 100%;
+    }
+
+} 

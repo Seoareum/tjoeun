@@ -1,0 +1,344 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #222328;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;  /*로고 위치 슬라이드로 안 넘어가게*/
+}
+.blind {
+    text-indent: -9999px;   /*ti-- 탭*/
+    font-size: 0; line-height: 0;
+}
+.wrap {
+    width: 600px;
+    margin: auto;
+}
+header {
+    display: flex;
+    justify-content: space-between;  /*양쪽맞춤*/
+    height: 100px;
+    border-bottom: 1px solid #ddd;
+}
+header h1 {
+    width: 25%;
+}
+header h1 img {
+    width: 100%;
+    filter: grayscale(100%);
+}
+header h1 a {
+    display: inline-block;
+    height: 100px;
+    padding-top: 30px;
+}
+
+/*nav*/
+nav {
+/*    width: 50%;*/
+}
+nav .nav-d1 {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav .nav-d1 > li {
+    position: relative;
+} 
+
+/*depth1 a 태그만 선택 (.nav-d1 > li> a 도 가능)*/
+nav .nav-d1 > li > a {
+    display: inline-block;
+    height: 100px;
+    padding: 0 30px;   /*라인하이트 또는 패딩 위 줘도 가능(공간주기)*/
+    line-height: 100px;
+}
+nav .nav-d1 > li > a:hover {
+    border-bottom: 3px solid red;
+}
+/*
+nav에 마우스 오버시 전체 보이게
+nav .nav-d1:hover .nav-d2 {
+    display: block;
+*/
+
+/*각 depth1의 li에 마우스 오버시 해당 하위 메뉴만 보이게*/
+nav .nav-d1 li:hover .nav-d2 {
+/*    display: block;*/
+    height: 126px;
+}
+nav .nav-d2 {
+    position: absolute; top: 100px;left: 0;right: 0;
+    z-index: 100;   /*마우스 오버시 하단메뉴 나오기*/
+/*    display: none;*/
+    overflow: hidden;
+    height: 0;   /* 하위메뉴들 길이 다를때 max-height */
+    background: #fff;
+    text-align: center;   /*글씨 가운데정렬*/
+    transition: all .5s;
+}
+nav .nav-d2 a {
+    display: block;
+    padding: 5px 0; 
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+}
+nav .nav-d2 a:hover {
+    background: #fc0053;
+    color: #fff
+}
+nav .nav-d2 li:last-child a {
+    border-bottom: none;
+}
+/*조부모*/
+.slide {
+    overflow: hidden;
+    position: relative;
+    height: 187px;
+    background: tomato;
+}
+/*부모*/
+.slide ul {
+    position: absolute;top: 0;left: 0;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    width: 300%;   /*이미지 3개라서 300%*/
+}
+.slide img {
+    width: 100%;
+}
+.container {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;   /*가로정렬*/
+    justify-content: space-between;
+    height: 200px;
+    padding: 20px 0;
+}
+.container .sec-g {
+    width: 31%;
+}
+/*공지사항 & 갤러리*/
+.sec-bbs .cont {
+    height: 100px;
+    /*background: lightblue;*/
+}
+.sec-bbs h2 {
+    display: inline-block;
+    padding: 5px 10px 3px;
+    background: #777;
+    color: #fff;
+    border: 1px solid red;
+    border-bottom: none;
+}
+/*활성화 탭*/
+.sec-bbs .on h2 {
+    background: #fff;
+    color: #000;
+}
+.sec-bbs > ul > li:last-child h2 {
+    border-left: none;
+}
+.sec-bbs > ul {
+    position: relative;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;   /*가로정렬*/
+}
+.sec-bbs .cont {
+    display: none;   /*평소 안보임*/
+    position: absolute;top: 33px;left: 0;
+    width: 100%;
+   /* height: 100px;
+    background: lightblue;*/
+}
+.sec-bbs .on .cont {
+    display: block;   /*on 되면 보임*/
+}
+.lst-bbs {
+    padding: 10px 0;  /*공지사항메뉴랑 본문 간격주기*/
+}
+.lst-bbs a {
+    position: relative;
+    display: block;
+    overflow: hidden;  /*글씨 넘치는거 자르기*/
+    white-space: nowrap;  /*글씨 연결안되고 링크대로 가로로 쭉 ex 번호 순서대로 엔터됨*/
+    text-overflow: ellipsis;  /*글 넘쳤을때 .. 처리*/
+    padding: 2px 0 0px 10px;
+    font-size: 12px;
+}
+/*목차에 네모박스*/
+.lst-bbs a::before {
+    position: absolute; top: 10px;left: 0;  /* 목차 박스위치*/
+    content: "";
+    display: block;
+    width: 3px;height: 3px;
+    background: #777;
+    border-radius: 50%;  /*목차 네모에서 원으로 만들기*/
+}
+.cont-gallery {
+    padding: 10px 0;  /*갤러리메뉴랑 본문 간격주기*/
+}
+.cont-gallery a {
+    /* inline 태그에 float를 적용하면 자동 block처리됨*/
+    /*display: block;*/
+    float: left;   
+    width: 60px;   /*33%*/
+    margin-right: 3px;
+    /*float는 사이즈 꼭 정확하게 해야함 합쳐서100%(w + margin)  공지,배너,바로가기 각각 186px이라 186나와야함 */
+    height: 110px;
+}
+.cont-gallery a:last-child {
+    margin-right: 0;
+}
+.cont-gallery img {
+    width: 100%; height: 100%;
+    object-fit: cover;  /*내가만든 크기에 가득차고 나머지 잘림*/
+}
+.sec-bnr .cont {
+    overflow: hidden;
+    height: 152px;   /*배너 이미지 높이*/
+}
+.sec-bnr .cont img {
+    width: 100%;
+}
+
+/*modal창  id는 #*/
+#modal {
+ /* fixed는 바디에 자동 고정 display 릴레이티브 안 넣어도됨*/
+    position: fixed;top: 0;left: 0;right: 0;bottom: 0;
+    background: rgba(0,0,0,0.6);
+/* 한가운데정렬 하는법*/
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+/*배너 클릭 시 (id)#modal에 on 추가*/
+/*평소 디스플레이 none 이였다가 on 이면 flex로*/
+#modal.on {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+}
+
+#modal img {
+    display: block;
+/* 이미지 라운드 처리*/
+    /*border: 1px solid #444;
+    border-radius: 5px;*/
+}
+#modal span {
+    position: relative;
+    display: block;
+}
+#modal span::after {
+    position: absolute;top: 0;left: 0; right: 0;bottom: 0;
+    /*absolut 줬으면 위에 relative줘야함*/
+    content: ' ';
+    border: 1px solid rgba(0,0,0,0.1);
+/*    opacity: 0.1;  얘는 전체적. 그래서 rgba로 넣었음*/
+}
+#modal .layer {
+    position: relative;
+}
+#modal .inp-close {
+/*포지션 앱솔루트로 맨아래 있던것을 오른쪽상단으로 옮김*/
+    position: absolute;top: -25px;right: -25px;   /*원의 절반*/
+    width: 50px;height: 50px;
+    border-radius: 50%;   /*사각형에서 라운딩줘서 원 만들기*/
+    border: 1px solid #999;
+    text-indent: -9999px;   /*닫기 글씨 멀리날림*/
+    background: #fff url(../images/ico-close.png) 50% 50% /* 50%는 원의 가운데정렬*/ no-repeat;
+    -webkit-background-size: 30px auto; /* or contian  / 원사이즈*/
+    background-size: 30px auto; /* or contain*/
+}
+
+/*바로가기*/
+.sec-goto .cont {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.sec-goto a {
+    display: inline-block;
+    width: 50%;
+    text-align: center;
+    padding: 6px 0;
+}
+.sec-goto img {
+    display: block;
+    margin: 0 auto 3px;       /* auto 이미지 가운데정렬, 3px은 이미지와 글씨 간격*/
+}
+
+footer {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: space-between;  /*양쪽맞춤*/
+    height: 100px;
+    background: lightgray;
+}
+
+/*영역 잡아주기*/
+footer h1 {
+    width: 25%;
+}
+footer h1 a {
+    display: block;
+    height: 100%;
+    background: url(..//images/logo.png) 20% 50%  no-repeat;
+    -webkit-background-size: 60% auto;
+    background-size: ; 60% auto;
+    text-indent: -9999px;
+}
+footer .copyright {
+    width: 40%;
+    padding-top: 24px;
+}
+footer .sns {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: space-between;
+    width: 20%;   /*아이콘크기 줄임*/
+    padding-right: 20px;   /*github 오른쪽 공간만들기*/
+}
+.sns a {
+    display: block;
+    width: 25%;
+    line-height: 120px;
+}
+.sns img {
+    width: 100%;
+}
+
+
+
+
+
