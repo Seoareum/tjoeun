@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+.nav-d1 {
+    display: flex;
+    > li {
+        background: #fff;
+        >a {
+            display: block;
+            padding: 5px 7px 3px;
+        }
+    }
+}
+
+.nav-d2 {
+    li {
+        padding: 5px;
+        a {
+            display: block;
+            &::before {
+                content: "가상선택자";
+            }
+            &::after {
+                content: "가상선택자";
+            }
+        }
+        &:first-child {
+            color: red;
+        }
+        &:nth-child(2) {
+            color: pink;
+        }
+    }
+}
+
+#modal{
+    &.on {
+        display: block;
+    }
+}

@@ -28,29 +28,31 @@ header h1 a {
     background-size: 90% auto;
     text-indent: -9999px;
 }
-nav {
-    text-align: center;
-}
 nav .nav-d1 {
+    width: 90%;
+    margin: auto;
+    text-align: center;
     display: block;
     background: #e70082;
     
 }
-nav .nav-d1 > li {
-    position: inline-block;
-}
 nav .nav-d1 >li > a {
     display: block;
-    height: 40px;
-    line-height: 40px;
+    height: 30px;
+    line-height: 30px;
     color: white;
 }
-
-
-nav .nav-d2 {
-    z-index: 100;
+nav .nav-d2 a {
+   font-size: 14px;
+   line-height: 1.7;
+    display: block;
     background: #fff;
-    text-align: center;
+}
+
+
+
+.link-more {
+  position: absolute;top: 2px;right: 0;
 }
 
 
@@ -61,46 +63,68 @@ nav .nav-d2 {
 
 
 
+.slide img{
+  height: auto;
+}
 
 
-
-/* nav .nav-d1 {
-    display: inline-block;
+.container {
+    display: flex;
     justify-content: space-between;
 }
-nav .nav-d1 > li {
-    position: absolute;
+.container h2 {
+  padding: 0 0 3px 2px;
+  color: #e70082;
+  font-family: Verdana,  sans-serif;
 }
-nav .nav-d1 > li > a {
-    display: inline-block;
-    height: 100px;
-    padding: 0 15px;
-    line-height: 100px;
+.container .sec-g {
+    width: 40%;
 }
-nav .nav-d1 > li > a:hover {
-    border-bottom: 1px solid red;
-}
-nav .nav-d1 li:hover .nav-d2 {
-    height: 100px;
-}
-nav .nav-d2 {
-    position: absolute;top: 0;left: 0;
-    z-index: 100;
+.cont  a {
+    font-size: 12px;
+    position: relative;
+    display: block;
+    white-space: nowrap;
     overflow: hidden;
-    height: 0;
-    background: #fff;
-    text-align: center;
-    transition: all .5s;
-} */
-
-
-
-.slide {
-    height: 350px;
+    text-overflow: ellipsis;
+    padding: 5px 0 0px 15px;
 }
-.container {
-    height: 200px;
+.sec-bbs .cont  ul li a::before {
+    position: absolute;top: 13px ;left: 8px;
+    content: "";
+    display: block;
+    width: 3px;height: 3px;
+    background: #777;
+    border-radius: 50%;
 }
+.time {
+  float: right;
+  margin: 0 30px 0 0;
+  font-size: 12px;font-family: Verdana,  sans-serif;
+  color: #999;
+}
+
+
+
+
+
+.sec-gallery a img {
+  margin: 5px 0 0 0;
+  width: 100%;
+}
+
+
+
+
+
+
+
 footer {
-    height: 100px;
+  display: flex;
+  justify-content: space-between;
+  height: 100px;
+  background: lightgray;
+}
+footer h1 {
+
 }

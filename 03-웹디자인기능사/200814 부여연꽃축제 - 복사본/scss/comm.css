@@ -1,0 +1,23 @@
+.nav-d1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.nav-d1 > li {
+  background: #fff;
+}
+
+.nav-d1 > li > a {
+  display: block;
+  padding: 5px 7px 3px;
+}
+
+.nav-d2 li {
+  padding: 5px;
+}
+
+.nav-d2 li a {
+  display: block;
+}
+/*# sourceMappingURL=comm.css.map */
