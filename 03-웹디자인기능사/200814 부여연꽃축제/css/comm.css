@@ -11,27 +11,14 @@
     box-sizing: border-box;
 }
 
+
 .wrap {
     position: relative;
     width: 100%; max-width: 1600px;
     padding-left: 200px;
 }
 
-h2 {
-  position: relative;
-  display: inline-block;
-  padding-bottom: 5px;
-  font-size: 20px;
-}
-h2::after {
-  position: absolute;
-  bottom: -1px;
-  left: 0;
-  content: '';
-  display: inline-block;
-  width: 100%;
-  height: 2px;
-}
+
 
 header{
     position: fixed;top: 0;left: 0;
@@ -85,33 +72,63 @@ nav .nav-d2 a:hover {
   background: #ddd;
 }
 
-.link-more {
-  position: absolute;top: 2px;right: 0;
-  font-size: 14px;
-}
-
 
 .slide img{
   width: 100%;
 }
 
+.sec-g {
+  position: relative;
+}
+.link-more {
+  position: absolute;top: 5px;right: 0px;
+  font-size: 14px;
+  color: #777;
+}
+.link-more::after {
+  content: "\f067";
+  margin-left: 3px;
+  font-family: 'Line Awesome Free';
+  font-weight: 900;
+}
+
 
 .container {
-    display: flex;
-    justify-content: space-between;
-    height: 300px;
+  padding-top: 17px;
+  display: flex;
+  justify-content: space-between;
+  height: 300px;
 }
-.container h2 {
+
+.tit- {
+  display: block;
   position: relative;
-  padding: 17px 0 3px 15px;
-  color: #e70082;
+  font-size: 20px;
+  padding-left: 10px;
+}
+.tit-::after {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  content: '';
+  display: inline-block;
+  width: 100%;
+  height: 2px;
+}
+
+.tit- span {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 5px;
   font-family: Verdana,  sans-serif;
+  font-size: 20px;
+  color: #e70082;
 }
 .container .sec-g {
     width: 50%;
 }
 .cont .lst {
-  padding: 5px 0 0px 10px;
+  padding-left: 10px;
 }
 .cont  a {
     overflow: hidden;
@@ -119,10 +136,11 @@ nav .nav-d2 a:hover {
     position: relative;
     display: block;
     white-space: nowrap;
-    padding: 5px 0 0px 15px;
+    padding-left: 13px;
+    line-height: 1.8;
   }
 .sec-bbs .cont  ul li a::before {
-    position: absolute;top: 13px ;left: 9px;
+    position: absolute;top: 8px ;left: 5px;
     content: "";
     display: block;
     width: 3px;height: 3px;
@@ -131,7 +149,6 @@ nav .nav-d2 a:hover {
 }
 .time {
   float: right;
-  margin: 0 30px 0 0;
   font-size: 12px;font-family: Verdana,  sans-serif;
   color: #999;
 }
@@ -162,19 +179,31 @@ nav .nav-d2 a:hover {
 
 
 footer {
-  height: 130px;width: 100%;
-  text-align: center;
+  height: 120px;width: 100%;
+  text-align: right;
   justify-content: space-between;
   background: #ddd;
+  padding-right: 20px;
 }
 .foot-tit {
-  margin: 20px 0 0 0;
+  padding-top: 15px;
   font-size: 15px;
 }
 address {
   font-size: 14px;
+  font-style: normal;
+}
+footer .foot-sns {
+  padding-left: 20px;
+}
+
+footer .foot-sns a {
+  float: left;
+}
+footer .foot-sns i {
+  font-size: 30px;
 }
 .copyright {
-  margin: 25px 0 0 0;
+  margin: 15px 0 0 0;
   font-size: 10px;
 }
