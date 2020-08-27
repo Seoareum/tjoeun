@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 조작</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+<body>
+    <!-- html set -->
+    <script>
+        $(function(){
+            $('#btn1').on('click', function(){
+                $('.text').text('안녕하세요! <br> 반갑습니다.')
+            })
+            $('#btn2').on('click', function(){
+                $('.html').html('안녕하세요! <br> 반갑습니다.')
+            })
+        })
+    </script>
+    <button id="btn1">Show Text</button>
+    <button id="btn2">Show HTML</button>
+    <br>
+    
+    <div class="text"></div>
+    <div class="html"></div>
+
+    <!-- get(불러옴), set -->
+    <script>
+        $(function(){
+            $('.btn-val').on('click', function(){
+                alert("value : " + $('#val').val())
+                $('#val').val('오오오');
+            })
+        })
+    </script>
+    <h1>val()</h1>
+    <p>Name: 
+    <input type="text" id="val" value="Mickey Mouse~~~"></p>
+
+    <button class="btn-val">Show Value</button>
+
+
+    <script>
+        $(function(){
+            $('.btn-attr').on('click', function(){
+                alert($('#w3s').attr('href'))   // 속성값을 alert창에 보여줘
+                $('#w3s').text('Naver')
+                                .attr('href', 'http://naver.com')
+            })
+        })
+    </script>
+
+    <h1>attr()</h1>
+    <p><a href="https://www.w3schools.com" id="w3s">W3Schools.com</a></p>
+    <button class="btn-attr">Show href Value</button>
+
+
+    <!-- 요소 추가하기 -->
+    <script>
+        $(function(){
+            $('.add a').prepend('<b>태그 내 앞</b>')  // a태그 안에 있는 menu "앞"에 글 넣고 싶다.(css로 보면 before) a태그 안으로 들어감
+            $('.add a').append('<b>태그 내 뒤</b>')  // a태그 안에 있는 menu "뒤"에 글 넣고 싶다.(css로 보면 after)  a태그 안으로 들어감
+            $('.add a').before('before')  //a태그 밖으로 나감
+            $('.add a').after('after')  //a태그 밖으로 나감
+        })
+    </script>
+    <ul class="add">
+        <li><a href="#">menu1</a></li>
+        <li><a href="#">menu2</a></li>
+        <li><a href="#">menu3</a></li>
+        <li><a href="#">menu4</a></li>
+        <li><a href="#">menu5</a></li>  
+      </ul>
+
+
+      <!-- 요소 제거(삭제)하기 -->
+      <script>
+          $(function(){
+              $('.remove li').eq(0).remove()   // first child도 가능하지만 eq도 가능. 첫번째니까 0으로 시작. remove는 태그 자체를 없앰.
+              $('.remove li').eq(2).empty()  // 남은 menu2-5에서 2번이니까 3번째. menu4없어짐
+          })
+      </script>
+      <ul class="remove">
+        <li>menu1</li>
+        <li>menu2</li>
+        <li>menu3</li>
+        <li>menu4</li>
+        <li>menu5</li>
+      </ul>
+
+
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택자</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        * {
+            margin: 0;padding: 0;
+            list-style: none;
+            text-decoration: none;
+            box-sizing: border-box;
+            color: #000;
+        }
+    </style>
+
+
+    <script>  // script할때 " $(function(){}) " 밑에 넣을땐 안넣고 그냥 써도됨. 해외는 아래에 씀
+        $(function(){
+
+            $('body').css({
+                'background' : 'lightgray',
+                'padding' : '20px'
+                });
+            $('#wrap').css('border', '1px solid red')
+            $('.list').css('border', '1px solid blue')
+            
+
+
+            // nav
+            $('nav li:even').css({
+                'background' : 'skyblue',
+            })
+            $('nav li:odd').css({
+                'background' : 'pink',
+            })
+            $('nav li:first-child').css({
+                'background' : 'orange',
+            })
+            $('nav li:nth-child(2)').css({
+                'background' : 'violet',
+            })
+            $('nav li:last-child').css({
+                'background' : 'slateblue',
+            })
+            $('nav a').css({
+                'display' : 'flex', 
+                'border': '1px solid pink',
+                'margin-bottom' : '5px',
+            })
+
+        })
+    </script>
+</head>
+<body>
+
+    <nav>
+        <script>
+            $(function(){
+                $('span').parent().css('background', 'tomato')   // parent : 바로 위 부모만
+                $('span').parents('ul').css('background', 'lightgreen')  // parents : ul의 위 부모 및 조상 다 포함
+                $('span').parentsUntil('div').css('background', 'aqua')  // span과 div 사이에 있는 애들만 먹힘
+
+                $('.list a').on('click', function(){
+                    $(this).parent().toggleClass('on');
+                })
+
+
+            })
+        </script>
+
+        <ul>
+            <li><a href="#">menu1</a></li>
+            <li><a href="#">menu2</a></li>
+            <li><a href="#">menu3</a></li>
+            <li><a href="#">menu4</a></li>
+        </ul>
+    </nav>
+
+    <div id="wrap">
+        wrap
+        <ul class="list">
+            ul
+            <li>
+                li
+                <span>span</span>
+                <span>span</span>
+            </li>
+            <li>
+                li
+                <a href="#">bbbbbb</a>
+            </li>
+        </ul>
+
+    </div>
+    
+
+    <!--  -->
+    <script>
+        $(function(){
+            $('.list- li').first().css('background', 'tomato');
+            $('.list- li').last().css('background', 'aqua');
+            $('.list- li').eq(3).css('background', 'lightgreen');   // eq0부터 시작하니까 4번째는 3으로 씀
+            $('.list- li').filter('.on').css('background', 'indigo');
+            /* $('.list- li').not('.last').css('background', 'indigo');    // last 빼고 다 선택*/ 
+
+
+        })
+    </script>
+    <ul class="list-">
+        <li><a href="#">menu1</a></li>
+        <li><a href="#">menu2</a></li>
+        <li class="on"><a href="#">menu3</a></li>
+        <li><a href="#">menu4</a></li>
+        <li><a href="#">menu5</a></li>
+        <li class="last"><a href="#">menu6</a></li>
+      </ul>
+
+
+
+
+</body>
+</html>

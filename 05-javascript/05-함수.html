@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수</title>
+    <script>
+        let a = 1
+        let b = 2
+
+        console.log(a + b)
+
+        // 함수로 만들기 ex)어제 최종 확진자 수(1)와 오늘 신규 확진자수(2) 더함
+        function add(a, b) {
+            return a + b;
+        }
+        console.log('a + b : ' + add(1, 2));
+
+        // name 출력
+        function hello(name){
+            //console.log('Hello ' + name + '!')
+            console.log(`Hello ${name}!`)   // es6 해당 업그레이드 부분. 위랑 동일출력됨.
+        }
+        hello('aarrmm')
+
+        // 점수 함수화. 노란건 함수이름. score는 점수(파라미터)
+        function getGrade(score){
+            if(score === 100){
+                return ('A+')
+            } else if(score >= 90) {
+                return ('A')
+            } else if(score >= 80) {
+                return ('B')
+            } else {
+                return ('F')
+            }
+        }
+        // getGrade(80);  const + console.log 뺴고 얘만 해도 가능
+        const grade = getGrade(80);
+        console.log(`나의 점수는 ${grade}입니다.`);
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

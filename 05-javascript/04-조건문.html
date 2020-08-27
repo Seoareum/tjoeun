@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조건문</title>
+    <script>
+        
+        // If문 쓰는법 : if( ){ }
+        const a = 1;
+        //if(조건){실행코드}
+        if(a + 1 === 2){
+            console.log('a+1은 2입니다.')  //true. 만약 2가 아닌 0이면 false라서 출력되지 않음.
+        }
+
+        // 변수 다른 블록에서 중복 선언
+        const b = 1;
+        if(true) {
+            const b = 2;
+            console.log('if문 안에 b값은 ' + b);
+        }
+        console.log('if문 밖에 b값은 ' + b);
+
+        // if-else if문 (조건 여러개일때)
+        const score = 95;
+        if(score === 100){
+            console.log('A+')
+        } else if(score >= 90) {
+            console.log('A')
+        } else if(score >= 80) {
+            console.log('B')
+        } else {
+            console.log('F')
+        }
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

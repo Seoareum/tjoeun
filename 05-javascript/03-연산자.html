@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연산자</title>
+    <script>
+        // 산술 연산자
+        let a = 1 + 2 - (3 * 4) / 4;
+        console.log('1 + 2 - (3 * 4) / 4 = ' +a);
+
+        let b = 1;
+        console.log('b++ : ' + b++);
+        console.log('++b : ' + ++b);
+
+        // 대입 연산자
+        let c = 1;
+        c += 3   // c = c + 3;   (c=1+3)
+        console.log('c +=3 : ' +c);
+
+        // 논리 연산자
+        // NOT(!) 넣기
+        const d = !true;
+        console.log('!true : ' + d)  // 결과는 false /만약 false에 ! 넣으면 true가 됨
+
+        // AND 연산자 (&&) 둘다 true여야 true. 하나만이면 false. --> 재선언해서 false 나옴
+        let e = true&&true;
+        e = false&&false;  // 재선언
+        console.log(e);
+
+        // OR (||) 둘중 하나만 true여도 true  -> true
+        let f =true || false;
+        console.log(f);
+
+        // 비교 연산자(두 값이 일치하는지 확인) /=== 비교하는것. 둘이 같은지 --> true 나옴
+        const aa = 1;  //숫자 1
+        const bb = '1';  //문자 1   / '''빼고 1 하면 true
+        const equals = aa === bb;
+        console.log('aa === bb : ' + equals);
+
+        const cc = 1;
+        const dd = 2;
+        const equals2 = cc !== dd;
+        console.log('cc !== dd : ' + equals2);   // 값이 다르니 true 나옴
+
+        // 문자열 붙이기
+        const ee = '안녕';
+        const ff = '하세요';
+        console.log(ee + ff + ' 아름입니다.')
+
+
+    </script>
+</head>
+<body>
+
+    
+</body>
+</html>
