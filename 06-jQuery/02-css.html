@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px auto;
+        }
+        .nav > li {
+            flex-grow: 1;
+        }
+        .nav > li > a {
+            display: block;
+            padding: 15px 0 12px;
+            background: #eee;
+            text-align: center;
+            color: #000;
+            text-decoration: none;
+        }
+        .nav > li.on > a {
+            background: tomato;
+            color: #fff;
+         }
+        
+    </style>
+</head>
+<body>
+    <script>
+        $(function(){
+            $('.nav-1 li').click(function(){     //on 복수or단수 가능. 단독일때 click가능
+                $('.nav-1 li').removeClass('on')
+                $(this).addClass('on')    // 클릭한 li = $(this)      / class라서 .on 이 아님 on임 .(점)없음. 단지 글씨임. 함수나 변수 아님 / 클릭한 애의 엄마
+
+            })
+        })
+    </script>
+
+    <ul class="nav nav-1">
+        <li class="on">
+          <a href="#">menu1</a>
+        </li>
+        <li>
+          <a href="#">menu2</a>
+        </li>
+        <li>
+          <a href="#">menu3</a>
+        </li>
+        <li>
+          <a href="#">menu4</a>
+        </li>
+      </ul>
+
+      <!-- depth2 -->
+      <script>
+          $(function(){
+              $('.nav-2 > li > a').click(function(){
+                  $('.nav-2 > li ').removeClass('on')
+                  $(this).parent().addClass('on')   //클릭한 애의 엄마(li). parent('li')
+
+              })
+
+          })
+      </script>
+      <ul class="nav nav-2">
+        <li class="on">
+          <a href="#">menu1</a>
+          <ul>
+              <li><a href="#">sub</a></li>
+              <li><a href="#">sub</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">menu2</a>
+          <ul>
+            <li><a href="#">sub</a></li>
+            <li><a href="#">sub</a></li>
+        </ul>
+        </li>
+        <li>
+          <a href="#">menu3</a>
+        </li>
+        <li>
+          <a href="#">menu4</a>
+        </li>
+      </ul>
+
+      <!-- css() -->
+      <script>
+          $(function(){
+              $('ul').css('padding', '20px')
+              $('ul > li').css({
+                  'margin-bottom' : '5px',
+                  'padding' : '15px 20px 11px',
+                  'background' : '#eee',
+              })
+          })
+      </script>
+      <ul class="css">
+        <li>menu1</li>
+        <li>menu2</li>
+        <li>menu3</li>
+        <li>menu4</li>
+      </ul>
+
+    
+</body>
+</html>
