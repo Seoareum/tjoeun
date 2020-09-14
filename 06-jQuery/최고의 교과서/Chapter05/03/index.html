@@ -9,7 +9,41 @@
 <link rel="stylesheet" href="./css/main.css">
 <script src="./js/vendor/modernizr.custom.min.js"></script>
 <script src="./js/vendor/jquery-1.10.2.min.js"></script>
-<script src="./js/main.js"></script>
+<!-- <script src="./js/main.js"></script> -->
+<script>
+
+$(function(){
+    //page-header 클래스를 가진 요소마다 작업을 수행   $('.page-header')=$헤더=$(this)
+    $('.page-header').each(function(){
+
+        let $윈도우 = $(window),
+             $헤더 = $(this),
+             헤더위치 = $헤더.offset().top
+
+
+        $윈도우.on('scroll', function(){
+            //$(window).scrollTop() : 윈도우의 스크롤 값을 알아내는 구문
+            console.log(`윈도우의 스크롤 값 : ${$윈도우.scrollTop()}`)
+            //$헤더.offset().top : 헤더의 위치값을 알아내는 구문
+            console.log(`헤더의 위치 값 : ${헤더위치}`)
+
+            if($윈도우.scrollTop() > 헤더위치){
+                $헤더.addClass('sticky');
+            }else{
+                $헤더.removeClass('sticky');
+
+            }
+
+
+
+        })
+    })
+
+
+})
+
+
+</script>
 </head>
 <body>
 

@@ -10,7 +10,54 @@
 <script src="./js/vendor/modernizr.custom.min.js"></script>
 <script src="./js/vendor/jquery-1.10.2.min.js"></script>
 <script src="./js/vendor/jquery.ba-throttle-debounce.min.js"></script>
-<script src="./js/main.js"></script>
+<!-- <script src="./js/main.js"></script> -->
+<script>
+    $(function(){
+        $('.page-header').each(function(){
+
+            let $window = $(window),
+                 $header = $(this),
+                 $헤더복제컨테이너 = $('<div class="page-header-clone"></div>'),
+                 $헤더복제 = $header.contents().clone(),
+                 // html의 위쪽에서 헤더의 저변까지의 거리 = 헤더의 최고 위치 + 헤더의 높이
+                 헤더위치높이 = $header.offset().top + $header.outerHeight()
+                 // 헤더위치높이 = $header.offset().top + ($header.outerHeight() / 2)   반만와도 검은색으로 변경
+
+                //바디에 헤더복제컨데이너 삽입
+                 $('body').append($헤더복제컨테이너)  
+                 // = $('body').append('<div class="page-header-clone"></div>')  바디태그 아래(뒤쪽에)에 div 넣어죠
+                 // append(뒤에껄 앞으로 넣어줘) <->appendto(앞에껄 뒤에 넣어줘) 반대개념
+
+                //$헤더복제컨테이너에 헤더복제 삽입
+                 $($헤더복제컨테이너).append($헤더복제)
+
+                $window.on('scroll', function(){
+                    //$(window).scrollTop() : 윈도우의 스크롤 값을 알아내는 구문
+                    console.log(`윈도우의 스크롤 값 : ${$window.scrollTop()}`)
+                    //$헤더.offset().top : 헤더의 위치값을 알아내는 구문
+                    console.log(`헤더의 위치 값 + 높이값 : ${헤더위치높이}`)
+
+                    if($window.scrollTop() > 헤더위치높이){
+                        $헤더복제컨테이너.addClass('visible')
+                    }else{
+                        $헤더복제컨테이너.removeClass('visible')
+
+                    }
+
+                })
+
+
+
+
+
+        })
+
+
+
+
+
+    })
+</script>
 </head>
 <body>
 
