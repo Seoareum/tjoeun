@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<!-- comm.scss 만든후에 link comm.css 부르기, 부트스크랩링크하고 그다음 내 링크 넣기 -->
+    <link rel="stylesheet" href="./dist/css/comm.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- jquery를 무조건 1위로 넣기, bootstrap은 다음순서  -->    
+    <script src="./dist/js/comm.js"></script>
+
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+
+    <div id="home" class="wrap">
+        <!-- header -->
+
+        <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+            <!-- Brand -->
+            <h1>
+            <a class="navbar-brand" href="#">Studio</a>
+            </h1>
+          
+            <!-- Toggler/collapsibe Button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <!-- Navbar links -->
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                   <a class="nav-link" href="#home">HOME</a>  
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#band">BAND</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#tour">TOUR</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#contact">CONTACT</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        <!-- //header -->
+
+        <!-- slide -->
+        <div id="demo" class="carousel slide" data-ride="carousel">
+
+            <!-- Indicators -->
+            <ul class="carousel-indicators">
+              <li data-target="#demo" data-slide-to="0" class="active"></li>
+              <li data-target="#demo" data-slide-to="1"></li>
+              <li data-target="#demo" data-slide-to="2"></li>
+            </ul>          
+            <!-- The slideshow -->
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="./images/la.jpg" alt="Los Angeles">
+              </div>
+              <div class="carousel-item">
+                <img src="./images/chicago.jpg" alt="Chicago">
+              </div>
+              <div class="carousel-item">
+                <img src="./images/ny.jpg" alt="New York">
+              </div>
+            </div>
+            <!-- Left and right controls -->
+            <a class="carousel-control-prev" href="#demo" data-slide="prev">
+              <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#demo" data-slide="next">
+              <span class="carousel-control-next-icon"></span>
+            </a>
+          
+          </div>
+        <!-- //slide -->
+
+        <!-- the band 섹션 -->
+        <div id="band" class="container text-center sec-band">
+            <h2>TEH BAND</h2>
+            <p>This is some text.</p>
+            
+            <div class="row mt-5">
+                <div class="col-md-3 col-sm-6 col-xs-12"><img src="./images/bandmember.jpg" class="rounded-circle" alt=""></div>
+                <div class="col-md-3 col-sm-6 col-xs-12"><img src="./images/bandmember.jpg" class="rounded-circle" alt=""></div>
+                <div class="col-md-3 col-sm-6 col-xs-12"><img src="./images/bandmember.jpg" class="rounded-circle" alt=""></div>
+                <div class="col-md-3 col-sm-6 col-xs-12"><img src="./images/bandmember.jpg" class="rounded-circle" alt=""></div>
+            </div>
+        </div>
+        
+        <!-- tour dates -->
+        <div id="tour" class="container-fluid sec-tour">
+            <div class="container text-center">
+                <h2 class="slideanim">Tour Dates</h2>
+                <p class="slideanim">Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur magni consequatur recusandae quas quo earum, modi ex asperiores officiis dolor qui exercitationem doloremque omnis ab itaque nisi temporibus ullam! Qui.</p>
+                
+                <!-- tab -->
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs mt-5">
+                    <li class="nav-item">
+                    <a class="nav-link active" data-toggle="tab" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#menu1">Menu 1</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#menu2">Menu 2</a>
+                    </li>
+                </ul>
+                
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div class="tab-pane container active" id="home">Home</div>
+                    <div class="tab-pane container fade" id="menu1">menu1 contact</div>
+                    <div class="tab-pane container fade" id="menu2">menu2 contact</div>
+                </div>
+
+
+
+            </div>
+        </div>
+        
+        <!-- container -->
+        <div div id="contact" class="container text-center">
+            <h2>Contact</h2>
+            <p>We love our fans</p>
+            <!-- form -->
+
+
+            <!-- <form action="/action_page.php"class="mt-5 form-contact" >
+              <div class="row"></div>  
+              <div class="form-group">
+                  <label for="email"></label>
+                  <input type="email" class="form-control" placeholder="Enter email" id="email">
+                </div>
+                <div class="form-group">
+                  <label for="pwd"></label>
+                  <input type="password" class="form-control" placeholder="Enter password" id="pwd">
+                </div>
+                <div class="form-group">
+                    <label for="comment"></label>
+                    <textarea class="form-control" rows="5" placeholder="Comment" id="comment"></textarea>
+                  </div>
+                <div class="form-group form-check">
+                  <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox"> Remember me
+                  </label>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form> -->
+              
+              <form action="/action_page.php" class="mt-5 form-contact">
+                <div class="row">
+                    <div class="form-group col-sm-6">
+                        <label for="usr" class="blind">Name:</label>
+                        <input type="text" class="form-control" id="usr" name="username" placeholder="username">
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <label for="email" class="blind">email:</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="email">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="comment" class="blind">Comment:</label>
+                    <textarea class="form-control" rows="5" id="comment" placeholder="comment"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+             
+
+        </div>
+        <!-- //container -->
+    
+
+        <!-- footer -->
+        <footer class="container-fluid" >
+            <div class="container text-center">   <!-- 컨테이너 넣으면 마진이 생김. 배경 넣을때 두가지 쌓주기 -->
+                <a href="#home">페이지 위로 이동</a>
+            </div>
+        </footer>
+        <!-- // footer -->
+
+
+
+
+
+    </div>
+    
+</body>
+</html>

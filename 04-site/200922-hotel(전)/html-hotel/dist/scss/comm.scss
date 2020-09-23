@@ -1,0 +1,141 @@
+@charset "UTF-8";
+@import url('./reset.css');
+@import 'variables';
+@import 'mixin';
+
+
+$black:#000;
+
+
+// 건너뛰기
+#skipnavigation {
+  a {
+    position:absolute; left:-3000%;
+    &:focus { display:block; left:0; top:0; z-index:10000000000; width:100%; height:30px; line-height:30px; background:$cerulean; color:#fff; text-align:center;}
+  }
+}
+
+// 1599 이상
+body {
+  background-color: tan;
+}
+.wrap {
+  padding-left: 15%;   /* 헤더의 width가 15니까 패딩도 15% */
+}
+header {
+  position: fixed;top: 0;left: 0;bottom: 0;
+  width: 15%;
+  background: tomato;
+  transition: all .5s;
+}
+nav {
+  overflow: hidden;
+  height: 50px;
+  background: #000;
+  transition: all .5s;
+}
+.container {
+  height: 95vh;
+  background: #eee;
+}
+
+
+$w : 20%;
+$h : 25%;
+
+
+article {
+  float: left;
+  width: $w;
+  height: $h;
+  transition: all .5s;
+  // 사각형 6 먹는 사이즈 넣기
+  &:first-child {
+    width: $w *3; 
+    height: $h *2;
+    background: rgba($black, 1);
+  }
+  &:nth-child(2){
+    width: 40%;
+    background: rgba($black, .15);
+  }
+  &:nth-child(3){
+    background: rgba($black, .2);
+  }
+  &:nth-child(4){
+    background: rgba($black, .25);
+  }
+  &:nth-child(5){
+    background: rgba($black, .3);
+  }
+  &:nth-child(6){
+    background: rgba($black, .35);
+  }
+  &:nth-child(7){
+    background: rgba($black, .4);
+  }
+  &:nth-child(8){
+    background: rgba($black, .45);
+  }
+  &:nth-child(9){
+    width: $w *2;
+    background: rgba($black, .5);
+  }
+  &:nth-child(10){
+    background: rgba($black, .55);
+  }
+  &:nth-child(11){
+    background: rgba($black, .6);
+  }
+  &:nth-child(12){
+    background: rgba($black, .65);
+  }
+}
+
+// 1599 이하
+@media screen and (max-width: 1599px) {
+  .wrap {
+    padding-left: 0;
+  }
+  header {
+    position: static;
+    width: 100%;
+  }
+  body {
+    background-color: blue;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  body {
+    background-color: blue;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  body {
+    background-color: blue;
+  }
+}
+
+@media screen and (max-width: 779px) {
+  body {
+    background-color: blue;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  body {
+    background-color: blue;
+  }
+}
+
+@media screen and (max-width: 1599px) {
+  body {
+    background-color: blue;
+  }
+}
+
+
+
+

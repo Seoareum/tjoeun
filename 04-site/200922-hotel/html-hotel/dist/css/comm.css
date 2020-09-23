@@ -1,0 +1,262 @@
+@charset "UTF-8";
+@import url("./reset.css");
+/* clearfix */
+#skipnavigation a {
+  position: absolute;
+  left: -3000%;
+}
+
+#skipnavigation a:focus {
+  display: block;
+  left: 0;
+  top: 0;
+  z-index: 10000000000;
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  background: #0072bc;
+  color: #fff;
+  text-align: center;
+}
+
+body {
+  background-color: tan;
+}
+
+.wrap {
+  padding-left: 15%;
+  /* 헤더의 width가 15니까 패딩도 15% */
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 15%;
+  background: tomato;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+nav {
+  overflow: hidden;
+  height: 5vh;
+  background: #000;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.container {
+  height: 95vh;
+  background: #eee;
+}
+
+article {
+  float: left;
+  width: 20%;
+  height: 25%;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+article:first-child {
+  width: 60%;
+  height: 50%;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+article:nth-child(2) {
+  width: 40%;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+article:nth-child(3) {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+article:nth-child(4) {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+article:nth-child(5) {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+article:nth-child(6) {
+  width: 40%;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+article:nth-child(7) {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+article:nth-child(8) {
+  background: rgba(0, 0, 0, 0.45);
+}
+
+article:nth-child(9) {
+  width: 40%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+article:nth-child(10) {
+  background: rgba(0, 0, 0, 0.55);
+}
+
+article:nth-child(11) {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+article:nth-child(12) {
+  background: rgba(0, 0, 0, 0.65);
+}
+
+@media screen and (max-width: 1599px) {
+  .wrap {
+    height: 100vh;
+    padding-left: 0;
+  }
+  header {
+    position: static;
+    width: 100%;
+    height: 15%;
+  }
+  nav {
+    height: 5%;
+  }
+  .container {
+    height: 80%;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .wrap {
+    height: auto;
+  }
+  .container {
+    overflow: hidden;
+  }
+  article {
+    width: 25%;
+    height: 250px;
+  }
+  article:first-child {
+    width: 75%;
+    height: 500px;
+  }
+  article:nth-child(2) {
+    width: 25%;
+    height: 250px;
+  }
+  article:nth-child(6) {
+    width: 50%;
+  }
+  article:nth-child(7) {
+    width: 50%;
+  }
+  article:nth-child(9) {
+    width: 25%;
+  }
+  article:nth-child(10) {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  article {
+    width: 33.333%;
+  }
+  article:first-child {
+    width: 100%;
+    height: 400px;
+  }
+  article:nth-child(2) {
+    width: 66.666%;
+  }
+  article:nth-child(4) {
+    width: none;
+  }
+  article:nth-child(5) {
+    width: 66.666%;
+  }
+  article:nth-child(6) {
+    width: 33.333%;
+  }
+  article:nth-child(7) {
+    width: 33.333%;
+  }
+  article:nth-child(8) {
+    width: 33.333%;
+  }
+  article:nth-child(9) {
+    display: none;
+  }
+  article:nth-child(10) {
+    display: none;
+  }
+  article:nth-child(11) {
+    display: none;
+  }
+  article:nth-child(12) {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 779px) {
+  article {
+    width: 50%;
+  }
+  article:nth-child(2) {
+    width: 100%;
+  }
+  article:nth-child(n+3) {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  header {
+    overflow: hidden;
+  }
+  nav {
+    display: none;
+  }
+  article:first-child {
+    height: 350px;
+  }
+  article:nth-child(n+2) {
+    height: 200px;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  header {
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    top: 50px;
+    z-index: 100;
+    width: 80vw;
+    height: 20vh;
+  }
+  .container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    height: 100vh;
+  }
+  article:first-child {
+    width: 100vw;
+    height: 100vh;
+  }
+  article:nth-child(n+2) {
+    display: none;
+  }
+}
+/*# sourceMappingURL=comm.css.map */
