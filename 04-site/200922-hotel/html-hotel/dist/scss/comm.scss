@@ -5,6 +5,7 @@
 
 
 $black:#000;
+$white : #fff;
 
 
 // 건너뛰기
@@ -14,26 +15,16 @@ $black:#000;
     left: -3000%;
 
     &:focus {
-      display: block;
-      left: 0;
-      top: 0;
-      z-index: 10000000000;
-      width: 100%;
-      height: 30px;
-      line-height: 30px;
-      background: $cerulean;
-      color: #fff;
-      text-align: center;
+      display: block;left: 0;top: 0;z-index: 10000000000;width: 100%;
+      height: 30px;line-height: 30px;background: $cerulean;
+      color: #fff;text-align: center;
     }
   }
 }
 
 // 1599 이상
-body {
-  background-color: tan;
-}
-
 .wrap {
+  position: relative;
   padding-left: 15%;
   /* 헤더의 width가 15니까 패딩도 15% */
 }
@@ -44,21 +35,53 @@ header {
   left: 0;
   bottom: 0;
   width: 15%;
-  background: tomato;
+  padding: 30px 20px;
+  background: $white;
   transition: all .5s;
+  h1 a {
+    display: block;
+    height: 160px;
+    background: url(../../images/logo1.png) 50% 50% no-repeat;
+    text-indent: -9999px;
+  }
+  #gnb {
+    width: 50%;
+    margin: 30px auto 0;
+    // text-align: center;
+    a {
+      font-size: 16px;
+    }
+    i {
+      margin-right: 5px;
+      font-size: 20px;
+    }
+  }
+  // .sns {  }
+  
 }
 
 nav {
+  position: absolute; top: 0; left:15%; right: 0; z-index: 1000;
   overflow: hidden;
-  height: 5vh;
-  background: #000;
+  height: 50px;
+  // height: 5vh; 컨테이너가 100이라 사라짐. 그래서 nav는 앱솔루트로 띄움
+  background: $black;
   transition: all .5s;
+  * {
+    color: $white;
+  }
+  .col-right {
+    float: right;
+  }
 }
 
 .container {
-  height: 95vh;
-  background: #eee;
+  position: relative;
+  height: 100vh;
+  padding-top: 50px; //nav 높이값만큼 주기.그래야 컨테이너 이미지 내려감
+    //background: #eee;
 }
+
 
 
 $w : 20%;
@@ -66,68 +89,94 @@ $h : 25%;
 
 
 article {
+  display: block;
+  position: relative;
+  overflow: hidden;
   float: left;
   width: $w;
   height: $h;
   transition: all .5s;
+  padding: 30px;
 
   // 사각형 6 먹는 사이즈 넣기
   &:first-child {
     width: $w *3;
     height: $h *2;
-    background: rgba($black, .1);
+    background: url(../../images/boracay1.jpg) 50% 50% no-repeat;
+    background-size: cover;
+    h2 {
+      position: absolute;bottom: -130px;right: 0;
+      font-size: 15vw; color: $white;
+    }
   }
 
   &:nth-child(2) {
     width: 40%;
-    background: rgba($black, .15);
+    background: $white;
   }
 
   &:nth-child(3) {
-    background: rgba($black, .2);
+    background: rgb(187, 241, 255);
+    i {
+      position: absolute;bottom: -40px;right: -50px;
+      color: $white; font-weight: bold;
+      font-size: 260px;
+      animation: rotate- 1s infinite;
+    }
+    @keyframes rotate- {
+      0% {transform: rotate(0);}
+      100% {transform: rotate(365deg);}
+    }
   }
 
   &:nth-child(4) {
-    background: rgba($black, .25);
+    background: url(../../images/boracay.jpg) 5% 50% no-repeat;
+    background-size: cover;
   }
 
   &:nth-child(5) {
-    background: rgba($black, .3);
+    background: url(../../images/boracay4.jpg) 10% 50% no-repeat;
+    background-size: cover;
   }
 
   &:nth-child(6) {
     width: $w * 2;
-    background: rgba($black, .35);
+    background: $white;
   }
 
   &:nth-child(7) {
-    background: rgba($black, .4);
+    background: url(../../images/boracay3.jpg) 50% 50% no-repeat;
+    background-size: cover;
   }
 
   &:nth-child(8) {
-    background: rgba($black, .45);
+    background: $white;
   }
 
   &:nth-child(9) {
     width: $w *2;
-    background: rgba($black, .5);
+    background: url(../../images/boracay6.jpg) 50% 30% no-repeat;
+    background-size: cover;
   }
 
   &:nth-child(10) {
-    background: rgba($black, .55);
+    background: url(../../images/boracay7.jpg) 50% 50% no-repeat;
+    background-size: cover;
   }
 
   &:nth-child(11) {
-    background: rgba($black, .6);
+    background: rgb(233, 207, 255);
   }
 
   &:nth-child(12) {
-    background: rgba($black, .65);
+    background: url(../../images/boracay5.jpg) 100% 50% no-repeat;
+    background-size: cover;
   }
 }
 
 // 1599 이하
 @media screen and (max-width: 1599px) {
+  $h:250px;
   .wrap {
     height: 100vh;
     padding-left: 0;
@@ -136,15 +185,23 @@ article {
   header {
     position: static;
     width: 100%;
-    height: 15%;
   }
 
   nav {
-    height: 5%;
+    position: static;
+    left: 0;
+    height: 50px;
   }
 
   .container {
-    height: 80%;
+    height: auto;
+    padding: 0;
+  }
+  article {
+    height: $h;
+    &:first-child {
+      height: $h*2;
+    }
   }
 }
 
@@ -157,6 +214,7 @@ article {
     height: auto;
   }
 
+
   .container {
     overflow: hidden;
   }
@@ -168,7 +226,6 @@ article {
     &:first-child {
       width: $w * 3;
       height: $h * 2;
-      // background: tomato;
     }
 
     &:nth-child(2) {
@@ -178,6 +235,7 @@ article {
    
     &:nth-child(6) {
       width: $w * 2;
+      background: rgb(219, 255, 252);
     }
 
     &:nth-child(7) {
@@ -201,7 +259,6 @@ article {
 
     article {
       width: $w;
-
       &:first-child {
         width: 100%;
         height: 400px;
@@ -209,29 +266,22 @@ article {
       &:nth-child(2) {
         width: $w * 2;
       }
-     
       &:nth-child(4) {
-        width: none;
+        display: none;
       }
       &:nth-child(5) {
-        width: $w * 2;
+        width: $w;
       }
       &:nth-child(6) {
-        width: $w;
+        width: $w*2;
       }
       &:nth-child(7) {
-        width: $w;
-      }
-      &:nth-child(8) {
-        width: $w;
+        display: none;
       }
       &:nth-child(9) {
-        display: none;
+        width: $w;
       }
       &:nth-child(10) {
-        display: none;
-      }
-      &:nth-child(11) {
         display: none;
       }
       &:nth-child(12) {
@@ -251,7 +301,29 @@ article {
         }
 
         // 같은 요소 중 3번째 이후 모든 요소
-        &:nth-child(n+3) {
+        // &:nth-child(n+3) {
+           // width: $w;}
+           
+        &:nth-child(3) {
+          display: none;
+        }
+        &:nth-child(5) {
+          width: $w;
+        }
+        &:nth-child(6) {
+          width: $w;
+        }
+        &:nth-child(9) {
+          width: $w;
+        }
+        &:nth-child(10) {
+          display: none;
+        }
+        &:nth-child(11) {
+          width: $w;
+        }
+        &:nth-child(12) {
+          display: block;
           width: $w;
         }
       }

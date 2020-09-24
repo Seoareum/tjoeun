@@ -19,11 +19,8 @@
   text-align: center;
 }
 
-body {
-  background-color: tan;
-}
-
 .wrap {
+  position: relative;
   padding-left: 15%;
   /* 헤더의 width가 15니까 패딩도 15% */
 }
@@ -34,83 +31,171 @@ header {
   left: 0;
   bottom: 0;
   width: 15%;
-  background: tomato;
+  padding: 30px 20px;
+  background: #fff;
   -webkit-transition: all .5s;
   transition: all .5s;
 }
 
+header h1 a {
+  display: block;
+  height: 160px;
+  background: url(../../images/logo1.png) 50% 50% no-repeat;
+  text-indent: -9999px;
+}
+
+header #gnb {
+  width: 50%;
+  margin: 30px auto 0;
+}
+
+header #gnb a {
+  font-size: 16px;
+}
+
+header #gnb i {
+  margin-right: 5px;
+  font-size: 20px;
+}
+
 nav {
+  position: absolute;
+  top: 0;
+  left: 15%;
+  right: 0;
+  z-index: 1000;
   overflow: hidden;
-  height: 5vh;
+  height: 50px;
   background: #000;
   -webkit-transition: all .5s;
   transition: all .5s;
 }
 
+nav * {
+  color: #fff;
+}
+
+nav .col-right {
+  float: right;
+}
+
 .container {
-  height: 95vh;
-  background: #eee;
+  position: relative;
+  height: 100vh;
+  padding-top: 50px;
 }
 
 article {
+  display: block;
+  position: relative;
+  overflow: hidden;
   float: left;
   width: 20%;
   height: 25%;
   -webkit-transition: all .5s;
   transition: all .5s;
+  padding: 30px;
 }
 
 article:first-child {
   width: 60%;
   height: 50%;
-  background: rgba(0, 0, 0, 0.1);
+  background: url(../../images/boracay1.jpg) 50% 50% no-repeat;
+  background-size: cover;
+}
+
+article:first-child h2 {
+  position: absolute;
+  bottom: -130px;
+  right: 0;
+  font-size: 15vw;
+  color: #fff;
 }
 
 article:nth-child(2) {
   width: 40%;
-  background: rgba(0, 0, 0, 0.15);
+  background: #fff;
 }
 
 article:nth-child(3) {
-  background: rgba(0, 0, 0, 0.2);
+  background: #bbf1ff;
+}
+
+article:nth-child(3) i {
+  position: absolute;
+  bottom: -40px;
+  right: -50px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 260px;
+  -webkit-animation: rotate- 1s infinite;
+          animation: rotate- 1s infinite;
+}
+
+@-webkit-keyframes rotate- {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(365deg);
+            transform: rotate(365deg);
+  }
+}
+
+@keyframes rotate- {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(365deg);
+            transform: rotate(365deg);
+  }
 }
 
 article:nth-child(4) {
-  background: rgba(0, 0, 0, 0.25);
+  background: url(../../images/boracay.jpg) 5% 50% no-repeat;
+  background-size: cover;
 }
 
 article:nth-child(5) {
-  background: rgba(0, 0, 0, 0.3);
+  background: url(../../images/boracay4.jpg) 10% 50% no-repeat;
+  background-size: cover;
 }
 
 article:nth-child(6) {
   width: 40%;
-  background: rgba(0, 0, 0, 0.35);
+  background: #fff;
 }
 
 article:nth-child(7) {
-  background: rgba(0, 0, 0, 0.4);
+  background: url(../../images/boracay3.jpg) 50% 50% no-repeat;
+  background-size: cover;
 }
 
 article:nth-child(8) {
-  background: rgba(0, 0, 0, 0.45);
+  background: #fff;
 }
 
 article:nth-child(9) {
   width: 40%;
-  background: rgba(0, 0, 0, 0.5);
+  background: url(../../images/boracay6.jpg) 50% 30% no-repeat;
+  background-size: cover;
 }
 
 article:nth-child(10) {
-  background: rgba(0, 0, 0, 0.55);
+  background: url(../../images/boracay7.jpg) 50% 50% no-repeat;
+  background-size: cover;
 }
 
 article:nth-child(11) {
-  background: rgba(0, 0, 0, 0.6);
+  background: #e9cfff;
 }
 
 article:nth-child(12) {
-  background: rgba(0, 0, 0, 0.65);
+  background: url(../../images/boracay5.jpg) 100% 50% no-repeat;
+  background-size: cover;
 }
 
 @media screen and (max-width: 1599px) {
@@ -121,13 +206,21 @@ article:nth-child(12) {
   header {
     position: static;
     width: 100%;
-    height: 15%;
   }
   nav {
-    height: 5%;
+    position: static;
+    left: 0;
+    height: 50px;
   }
   .container {
-    height: 80%;
+    height: auto;
+    padding: 0;
+  }
+  article {
+    height: 250px;
+  }
+  article:first-child {
+    height: 500px;
   }
 }
 
@@ -152,6 +245,7 @@ article:nth-child(12) {
   }
   article:nth-child(6) {
     width: 50%;
+    background: #dbfffc;
   }
   article:nth-child(7) {
     width: 50%;
@@ -176,27 +270,21 @@ article:nth-child(12) {
     width: 66.666%;
   }
   article:nth-child(4) {
-    width: none;
+    display: none;
   }
   article:nth-child(5) {
-    width: 66.666%;
+    width: 33.333%;
   }
   article:nth-child(6) {
-    width: 33.333%;
+    width: 66.666%;
   }
   article:nth-child(7) {
-    width: 33.333%;
-  }
-  article:nth-child(8) {
-    width: 33.333%;
+    display: none;
   }
   article:nth-child(9) {
-    display: none;
+    width: 33.333%;
   }
   article:nth-child(10) {
-    display: none;
-  }
-  article:nth-child(11) {
     display: none;
   }
   article:nth-child(12) {
@@ -211,7 +299,26 @@ article:nth-child(12) {
   article:nth-child(2) {
     width: 100%;
   }
-  article:nth-child(n+3) {
+  article:nth-child(3) {
+    display: none;
+  }
+  article:nth-child(5) {
+    width: 50%;
+  }
+  article:nth-child(6) {
+    width: 50%;
+  }
+  article:nth-child(9) {
+    width: 50%;
+  }
+  article:nth-child(10) {
+    display: none;
+  }
+  article:nth-child(11) {
+    width: 50%;
+  }
+  article:nth-child(12) {
+    display: block;
     width: 50%;
   }
 }
