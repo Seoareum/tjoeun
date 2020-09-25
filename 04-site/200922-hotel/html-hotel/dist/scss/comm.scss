@@ -42,24 +42,32 @@ header {
     display: block;
     height: 160px;
     background: url(../../images/logo1.png) 50% 50% no-repeat;
+    background-size: contain;
     text-indent: -9999px;
   }
   #gnb {
     width: 50%;
-    margin: 30px auto 0;
+    margin: 50px auto 0;
     // text-align: center;
     a {
-      font-size: 16px;
+      font-size: 15px;
     }
     i {
-      margin-right: 5px;
+      display: inline-block;
+      margin-right: 5px; margin-top: -2px;
+      vertical-align: middle;
       font-size: 20px;
     }
   }
-  // .sns {  }
-  
+  .sns {
+    position: absolute; 
+    bottom: 20px; 
+    left: 0px; 
+    overflow: hidden;
+    margin-left: 50px;
+  }
 }
-
+  
 nav {
   position: absolute; top: 0; left:15%; right: 0; z-index: 1000;
   overflow: hidden;
@@ -70,9 +78,16 @@ nav {
   * {
     color: $white;
   }
+  .col-left a {
+    margin-right: 10px;
+  }
   .col-right {
     float: right;
   }
+  .col-right a {
+    margin-left: 10px;
+  }
+  
 }
 
 .container {
@@ -100,13 +115,14 @@ article {
 
   // 사각형 6 먹는 사이즈 넣기
   &:first-child {
+    font-family: "Biggest Things";
     width: $w *3;
     height: $h *2;
     background: url(../../images/boracay1.jpg) 50% 50% no-repeat;
     background-size: cover;
     h2 {
-      position: absolute;bottom: -130px;right: 0;
-      font-size: 15vw; color: $white;
+      position: absolute;bottom: -7vh;right: 0;
+      font-size: 11vw; color: $white;
     }
   }
 
@@ -183,8 +199,29 @@ article {
   }
 
   header {
+    padding-top: 0%;
+    padding-bottom: 0;
     position: static;
     width: 100%;
+    overflow: hidden;
+    h1 {
+      float: left;
+    }
+    h1 a {
+      background: url(../../images/logo2.png) 50% 50% no-repeat;
+      background-size: contain;
+      display: block;
+      width: 190px;
+      height: 80px;
+
+    }
+    #gnb {
+      margin-top: 30px;
+      width: 380px;
+      display: flex;
+      justify-content: space-between;
+      float: right;
+    }
   }
 
   nav {
@@ -201,6 +238,9 @@ article {
     height: $h;
     &:first-child {
       height: $h*2;
+      h2 {
+        bottom: -4vh;right: 0;
+      }
     }
   }
 }
@@ -226,6 +266,9 @@ article {
     &:first-child {
       width: $w * 3;
       height: $h * 2;
+      h2 {
+        bottom: -2vh;
+      }
     }
 
     &:nth-child(2) {
@@ -262,6 +305,9 @@ article {
       &:first-child {
         width: 100%;
         height: 400px;
+        h2 {
+          bottom: -2vh;
+        }
       }
       &:nth-child(2) {
         width: $w * 2;
@@ -296,6 +342,11 @@ article {
 
       article {
         width: $w;
+        &:first-child {
+          h2 {
+            bottom: -2vh;
+          }          
+        }
         &:nth-child(2) {
           width: 100%;
         }
@@ -334,7 +385,23 @@ article {
     @media screen and (max-width: 639px) {
       header {
         overflow: hidden;
-        //height: 80px;
+        height: 110px;
+        h1 {
+          float: inherit;
+        }
+        h1 a {
+          display: block;
+          margin: auto;
+          background: url(../../images/logo2.png) 50% 50% no-repeat;
+          width: 180px;
+          height: 80px;
+          background-size: contain;
+        }
+        #gnb {
+          margin: auto;
+          width: 70vw;
+          float: inherit;
+        }
       }
       
       nav {
@@ -359,7 +426,31 @@ article {
         top: 50px;
         z-index: 100;
         width: 80vw;
-        height: 20vh;
+        height: 80vh;
+        background: transparent;  //배경 컬러 없애줌
+        h1 a {
+          background: url(../../images/logo1.png) 50% 50% no-repeat;
+          width: 140px;
+          height: 140px;
+          background-size: contain;
+        }
+        #gnb {
+          margin-top: 25px;
+          flex-direction: column;
+          li {
+            margin: 9px 0;
+          }
+          a{
+            display: block;
+            width: 100%; padding: 13px 0;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 8px;
+            color: $black; text-align: center;            
+          }
+        }
+        .sns {
+          text-indent: -9999px;
+        }
        }
 
        .container {
@@ -374,8 +465,10 @@ article {
        }
         article {
           &:first-child {
+            text-indent: -9999px;
+            background: url(../../images/boracay1.jpg) 15% 40% no-repeat;
             width: 100vw;
-            height: 100vh;
+            height: 100vh;            
           }
           &:nth-child(n+2) {
             display: none;
@@ -384,3 +477,4 @@ article {
 
       }
 
+    
